@@ -1,0 +1,26 @@
+{
+  "name": "phonica-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon ./bin/www"
+  },
+  "keywords": [],
+  "author": "Leon Ormes <leonormes@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "eslint": "^4.10.0",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "pg": "^7.3.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.22.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.1"
+  }
+}
