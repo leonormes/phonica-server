@@ -6,30 +6,30 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       grapheme: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       phonemeId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Phonemes',
           key: 'id',
-          as: 'phonemeId'
-        }
-      }
+          as: 'phonemeId',
+        },
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Graphemes');
-  }
+  },
 };

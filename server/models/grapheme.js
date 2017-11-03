@@ -2,17 +2,17 @@ module.exports = (sequelize, DataTypes) => {
   const Grapheme = sequelize.define('Grapheme', {
     grapheme: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      field: 'id'
-    }
+      field: 'id',
+    },
   });
-  Grapheme.associate = models => {
+  Grapheme.associate = (models) => {
     Grapheme.belongsTo(models.Phoneme, {
-      foreignKey: 'phonemeId'
+      foreignKey: 'phonemeId',
     });
   };
 
