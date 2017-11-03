@@ -8,6 +8,9 @@ The phoneme &#230; as in apple has a grapheme a.
 
 In this case I want to create the data for the DB with associations. I can look up a phoneme (sound) and list its 1 or more graphemes. We don't actually use the 	&#601;&#650; characters but I want them for the teachers, as some phonemes are tricky to identify written with normal letters. Like 'th'. 'Thick'(&#952;) and 'The'(&#240;)
 
+These are the graphemes
+
+![graphemes](http://jollylearning.co.uk/wordpress/images/LetterSounds.gif)
 ## Install
 `git clone git@github.com:leonormes/phonica-server.git`
 
