@@ -34,7 +34,10 @@ Make sure you have sequelize CLI installed.
 
 Sequelize deals with the DB. 
 
-`sequlize db:migrate`
+Actually you don't need to run the migrations as I have a `db.sync()` method when the server starts that will make
+the tables from the models when you start the server.
+
+`npm run start:dev`
 
 Will create the tables
 
@@ -42,8 +45,15 @@ then run
 
  `node seed.js`
 
-This should run a script to add stuff to the database.
+This should run a script to add stuff to the database. At the moment it just adds Graphemes. 
 
+## Test API
+
+In postman 
+
+`get http://localhost:8000/graphemes`
+
+and you should see an object of all the graphemes in the db returned.
 ## Technology used
 
 - Node with Express
