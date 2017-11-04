@@ -7,7 +7,7 @@ app.set('port', port);
 const server = http.createServer(app);
 server.listen(port, function() {
   db
-    .sync({force: true})
+    .sync({force: false})
     .then((message) => {
       console.log('...and db is synced!');
     })

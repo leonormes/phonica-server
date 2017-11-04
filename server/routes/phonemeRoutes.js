@@ -10,4 +10,12 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
+router.post('/', (req, res, next) => {
+  Phoneme.create(req.body)
+    .then((phoneme) => {
+      res.send(phoneme);
+    })
+    .catch(next);
+});
+
 module.exports = router;
