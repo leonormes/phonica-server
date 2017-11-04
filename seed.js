@@ -144,12 +144,6 @@ const GraphemeData = [
     updatedAt: new Date(),
   },
   {
-    grapheme: 'v',
-    id: 24,
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
     grapheme: 'w',
     id: 25,
     createdAt: new Date(),
