@@ -19,6 +19,10 @@ const Phoneme = db.define('Phoneme', {
     type: Sequelize.STRING,
     allowNull: true,
   },
+  vowel: {
+    type: Sequelize.BOOLEAN,
+    allNull: false,
+  },
 });
 
 module.exports = Phoneme;
