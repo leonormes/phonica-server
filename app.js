@@ -3,6 +3,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const PhonemeRouter = require('./server/routes/phonemeRoutes');
+const GraphemeRouter = require('./server/routes/graphemeRoutes');
 // Set up the express app
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/phonemes', PhonemeRouter);
+app.use('/graphemes', GraphemeRouter);
 // Setup a default catch-all route that sends back a welcome message
 app.get('*', (req, res) =>
   res.status(200).send({

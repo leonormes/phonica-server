@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Grapheme = require('../models/index').Grapheme;
+const Grapheme = require('../models/grapheme');
 
 router.get('/', (req, res, next) => {
   Grapheme.findAll({
