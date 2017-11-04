@@ -1,9 +1,11 @@
-const db = require('./server/models/index');
+const db = require('./db');
+console.log(db);
 // importing Bluebird promises so we can Promise.map
 const Promise = require('bluebird');
 const Phoneme = require('./server/models/phoneme');
 const Grapheme = require('./server/models/grapheme');
 
+// an array of grapheme entries
 const GraphemeData = [
   {
     grapheme: 's',
@@ -175,9 +177,82 @@ const GraphemeData = [
   },
 ];
 
-// We will go through the Models one by one and create an instance
-// for each element in the array. Look below for a commented out
-// version of how to do this in one slick nested Promise.
+// an array of Phoneme entries
+
+const PhonemeData = [
+  {
+    phoneme: 's',
+    id: 1,
+    description: 'see, set, sit',
+    uniCode: null,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: 'p',
+    id: 2,
+    description: 'pen, copy, happen',
+    uniCode: null,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: 'b',
+    id: 3,
+    description: 'back, baby, job',
+    uniCode: null,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: 't',
+    id: 4,
+    description: 'tea, tight, button',
+    uniCode: null,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: 'd',
+    id: 5,
+    description: 'day, ladder, odd',
+    uniCode: null,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: 'k',
+    id: 6,
+    description: 'key, clock, school',
+    uniCode: null,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: 'g',
+    id: 7,
+    description: 'get, giggle, ghost',
+    uniCode: '&#609;',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: 'ch',
+    id: 8,
+    description: 'church, match, nature',
+    uniCode: 't &#643;',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: 'j',
+    id: 9,
+    description: 'judge, age, soldier',
+    uniCode: 'd &#658;',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+];
 
 // Sync and restart db before seeding
 db
@@ -185,8 +260,6 @@ db
   .then(() => {
     console.log('synced DB and dropped old data');
   })
-  // here, we go through all the models one by one, create each
-  // element from the seed arrays above, and log how many are created
   .then(() => {
     return Promise.map(GraphemeData, function(grapheme) {
       return Grapheme.create(grapheme);
@@ -194,6 +267,14 @@ db
   })
   .then((createdGraphemes) => {
     console.log(`${createdGraphemes.length} graphemes created`);
+  })
+  .then(() => {
+    return Promise.map(PhonemeData, function(phoneme) {
+      return Phoneme.create(phoneme);
+    });
+  })
+  .then((createdPhoneme) => {
+    console.log(`${createdPhoneme.length} phonemes created`);
   })
   .catch((err) => {
     console.error('Error!', err, err.stack);
