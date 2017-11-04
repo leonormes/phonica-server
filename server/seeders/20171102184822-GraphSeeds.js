@@ -18,6 +18,12 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
+          grapheme: 't',
+          id: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
           grapheme: 'p',
           id: 4,
           createdAt: new Date(),
