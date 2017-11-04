@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon ./bin/www"
+    "start:dev": "nodemon ./bin/www.js"
   },
   "keywords": [],
   "author": "Leon Ormes <leonormes@gmail.com>",
