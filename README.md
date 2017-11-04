@@ -38,12 +38,15 @@ Sequelize deals with the DB.
 
 Will create the tables
 
-`sequelize db:seed:all` 
+then run
 
-should now run the seed file in `server/seeders`
+ `node seed.js`
+
+This should run a script to add stuff to the database.
 
 ## Technology used
 
 - Node with Express
 - Postgres
 - Sequelize
+- Heroku

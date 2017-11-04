@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
-const db = require('./index');
+const db = require('../../db');
+
 const Phoneme = db.define('Phoneme', {
   phoneme: {
     type: Sequelize.STRING,
