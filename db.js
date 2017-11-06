@@ -11,6 +11,7 @@ db.sequelize = sequelize;
 // Models/tables
 db.phonemes = require('./server/models/phoneme')(sequelize, Sequelize);
 db.graphemes = require('./server/models/grapheme')(sequelize, Sequelize);
+db.word = require('./server/models/word')(sequelize, Sequelize);
 
 // Relationships
 db.graphemes.belongsTo(db.phonemes);
