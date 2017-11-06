@@ -1,11 +1,16 @@
 const router = require('express').Router();
 
-const Phoneme = require('../../db').phonemes;
+const db = require('../../db');
 
 router.get('/', (req, res, next) => {
-  Phoneme.findAll({
-    where: req.query,
-  })
+  db.phonemes
+    .findAll({
+      include: [
+        {
+          model: db.graphemes,
+        },
+      ],
+    })
     .then(res.send.bind(res))
     .catch(next);
 });

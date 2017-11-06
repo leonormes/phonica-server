@@ -235,7 +235,7 @@ const GraphemeData = [
     id: 34,
     createdAt: new Date(),
     updatedAt: new Date(),
-    PhonemeId: 14,
+    PhonemeId: 43,
   },
   {
     grapheme: 'ng',
@@ -292,23 +292,34 @@ const GraphemeData = [
     createdAt: new Date(),
     updatedAt: new Date(),
     PhonemeId: 13,
-<<<<<<< HEAD
-=======
   },
   {
-    grapheme: 'zh',
+    grapheme: 'oi',
     id: 43,
     createdAt: new Date(),
     updatedAt: new Date(),
-    PhonemeId: 16,
+    PhonemeId: 35,
   },
   {
-    grapheme: 'ea',
+    grapheme: 'ue',
     id: 44,
     createdAt: new Date(),
     updatedAt: new Date(),
-    PhonemeId: 27,
->>>>>>> exhaustive graphemes
+    PhonemeId: 36,
+  },
+  {
+    grapheme: 'er',
+    id: 45,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    PhonemeId: 44,
+  },
+  {
+    grapheme: 'ar',
+    id: 46,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    PhonemeId: 41,
   },
 ];
 
