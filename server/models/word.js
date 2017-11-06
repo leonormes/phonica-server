@@ -2,12 +2,11 @@ module.exports = (sequelize, DataTypes) => {
   const Word = sequelize.define('Word', {
     word: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
-    id: {
+    uuid: {
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV1,
       primaryKey: true,
-      field: 'id',
     },
   });
   return Word;

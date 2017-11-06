@@ -3,6 +3,7 @@ const db = require('./db');
 const Promise = require('bluebird');
 const Phoneme = require('./db').phonemes;
 const Grapheme = require('./db').graphemes;
+const Word = require('./db').words;
 
 // an array of grapheme entries
 const GraphemeData = [
@@ -769,6 +770,12 @@ const PhonemeData = [
   },
 ];
 
+const WordData = [
+  {
+    word: 'crab',
+    graphemes: [{id: 2}, {id: 10}, {id: 15}],
+  },
+];
 // Sync and restart db before seeding
 db.sequelize
   .sync({force: true})
@@ -793,6 +800,14 @@ db.sequelize
   })
   .then((createdGraphemes) => {
     console.log(`${createdGraphemes.length} graphemes created`);
+  })
+  .then(() => {
+    return Promise.map(WordData, function(word) {
+      return Word.create(word, {include: db.graphemes});
+    });
+  })
+  .then((createdWords) => {
+    console.log(`${createdWords.length} words created`);
   })
   .finally(() => {
     db.sequelize.close();
