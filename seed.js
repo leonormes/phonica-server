@@ -292,6 +292,23 @@ const GraphemeData = [
     createdAt: new Date(),
     updatedAt: new Date(),
     PhonemeId: 13,
+<<<<<<< HEAD
+=======
+  },
+  {
+    grapheme: 'zh',
+    id: 43,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    PhonemeId: 16,
+  },
+  {
+    grapheme: 'ea',
+    id: 44,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    PhonemeId: 27,
+>>>>>>> exhaustive graphemes
   },
 ];
 
