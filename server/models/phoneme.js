@@ -1,28 +1,26 @@
-const Sequelize = require('sequelize');
-const db = require('../../db');
-
-const Phoneme = db.define('Phoneme', {
-  phoneme: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    field: 'id',
-  },
-  description: {
-    type: Sequelize.TEXT,
-    allowNull: true,
-  },
-  uniCode: {
-    type: Sequelize.STRING,
-    allowNull: true,
-  },
-  vowel: {
-    type: Sequelize.BOOLEAN,
-    allNull: false,
-  },
-});
-
-module.exports = Phoneme;
+module.exports = (sequelize, DataTypes) => {
+  const Phoneme = sequelize.define('Phoneme', {
+    phoneme: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      field: 'id',
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    uniCode: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    vowel: {
+      type: DataTypes.BOOLEAN,
+      allNull: false,
+    },
+  });
+  return Phoneme;
+};

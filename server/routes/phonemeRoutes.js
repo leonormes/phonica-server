@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Phoneme = require('../models/phoneme');
+const Phoneme = require('../../db').phonemes;
 
 router.get('/', (req, res, next) => {
   Phoneme.findAll({

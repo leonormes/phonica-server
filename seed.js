@@ -1,8 +1,8 @@
 const db = require('./db');
 // importing Bluebird promises so we can Promise.map
 const Promise = require('bluebird');
-const Phoneme = require('./server/models/phoneme');
-const Grapheme = require('./server/models/grapheme');
+const Phoneme = require('./db').phonemes;
+const Grapheme = require('./db').graphemes;
 
 // an array of grapheme entries
 const GraphemeData = [
@@ -11,6 +11,7 @@ const GraphemeData = [
     id: 1,
     createdAt: new Date(),
     updatedAt: new Date(),
+    PhonemeId: 1,
   },
   {
     grapheme: 'a',
@@ -623,18 +624,10 @@ const PhonemeData = [
 ];
 
 // Sync and restart db before seeding
-db
+db.sequelize
   .sync({force: true})
   .then(() => {
     console.log('synced DB and dropped old data');
-  })
-  .then(() => {
-    return Promise.map(GraphemeData, function(grapheme) {
-      return Grapheme.create(grapheme);
-    });
-  })
-  .then((createdGraphemes) => {
-    console.log(`${createdGraphemes.length} graphemes created`);
   })
   .then(() => {
     return Promise.map(PhonemeData, function(phoneme) {
@@ -647,8 +640,16 @@ db
   .catch((err) => {
     console.error('Error!', err, err.stack);
   })
+  .then(() => {
+    return Promise.map(GraphemeData, function(grapheme) {
+      return Grapheme.create(grapheme);
+    });
+  })
+  .then((createdGraphemes) => {
+    console.log(`${createdGraphemes.length} graphemes created`);
+  })
   .finally(() => {
-    db.close();
+    db.sequelize.close();
     console.log('Finished!');
     return null;
   });
