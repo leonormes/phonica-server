@@ -744,7 +744,7 @@ const PhonemeData = [
   {
     phoneme: 'ou',
     id: 47,
-    description: 'you, influence, situation	',
+    description: 'you, influence, situation',
     uniCode: 'u',
     vowel: true,
     createdAt: new Date(),
@@ -773,7 +773,7 @@ const PhonemeData = [
 const WordData = [
   {
     word: 'crab',
-    graphemes: [{id: 2}, {id: 10}, {id: 15}],
+    graphemes: [{grapheme: 'c'}, {grapheme: 'r'}],
   },
 ];
 // Sync and restart db before seeding
