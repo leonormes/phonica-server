@@ -13,14 +13,10 @@ const WordData = [
   },
   {
     word: 'tin',
-    graphemes: [{grapheme: 'c'}, {grapheme: 'r'}],
+    graphemes: [{grapheme: 't'}, {grapheme: 'i'}],
   },
 ];
 
 Rx.Observable.from(WordData).subscribe((word) => {
-  console.log(word.word);
   Word.create(word);
-  Rx.Observable.from(word.graphemes).subscribe((gr) => {
-    console.log(gr);
-  });
 });
