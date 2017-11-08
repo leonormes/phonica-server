@@ -1,5 +1,5 @@
 const db = require('./db');
-let Rx = require('rxjs/Rx');
+const Rx = require('rxjs/Rx');
 // importing Bluebird promises so we can Promise.map
 const Promise = require('bluebird');
 const Phoneme = require('./db').phonemes;
@@ -774,7 +774,20 @@ const PhonemeData = [
 const WordData = [
   {
     word: 'crab',
-    graphemes: [{grapheme: 'c'}, {grapheme: 'r'}],
+    graphemes: [
+      {grapheme: 'c'},
+      {grapheme: 'r'},
+      {grapheme: 'a'},
+      {grapheme: 'b'},
+    ],
+  },
+  {
+    word: 'tin',
+    graphemes: [{grapheme: 't'}, {grapheme: 'i'}, {grapheme: 'n'}],
+  },
+  {
+    word: 'sit',
+    graphemes: [{grapheme: 's'}, {grapheme: 'i'}, {grapheme: 't'}],
   },
 ];
 // Sync and restart db before seeding
@@ -804,14 +817,16 @@ db.sequelize
   })
   .then(() => {
     return Promise.map(WordData, function(word) {
-      return Word.create(word, {include: db.graphemes});
+      Word.create(word).then((newWord) => {
+        return Promise.map(word.graphemes, (grapheme) => {
+          Grapheme.findAll({
+            where: {
+              grapheme: grapheme.grapheme,
+            },
+          }).then((gr) => {
+            newWord.setGraphemes([gr[0].dataValues.uuid]);
+          });
+        });
+      });
     });
-  })
-  .then((createdWords) => {
-    console.log(`${createdWords.length} words created`);
-  })
-  .finally(() => {
-    db.sequelize.close();
-    console.log('Finished!');
-    return null;
   });

@@ -1,13 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
-  const Phoneme = sequelize.define('Phoneme', {
+  const Phoneme = sequelize.define('phoneme', {
     phoneme: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    uuid: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV1,
+      primaryKey: true,
+    },
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
-      field: 'id',
     },
     description: {
       type: DataTypes.TEXT,

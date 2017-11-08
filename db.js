@@ -16,7 +16,9 @@ db.words = require('./server/models/word')(sequelize, Sequelize);
 // Relationships
 db.graphemes.belongsTo(db.phonemes);
 db.phonemes.hasMany(db.graphemes);
-db.words.hasMany(db.graphemes);
+db.words.belongsToMany(db.graphemes, {
+  through: 'word_graphemes',
+});
 db.graphemes.belongsToMany(db.words, {
   through: 'word_graphemes',
 });

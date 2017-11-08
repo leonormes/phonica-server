@@ -1,13 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
-  const Grapheme = sequelize.define('Grapheme', {
+  const Grapheme = sequelize.define('grapheme', {
     grapheme: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    uuid: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV1,
+      primaryKey: true,
+    },
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
-      field: 'id',
     },
   });
   return Grapheme;
