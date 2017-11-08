@@ -7,7 +7,7 @@ const GraphemeRouter = require('./server/routes/graphemeRoutes');
 const WordRouter = require('./server/routes/wordRoutes');
 // Set up the express app
 const app = express();
-
+console.log('Env as string', process.env.NODE_ENV);
 // Log requests to the console.
 app.use(logger('dev'));
 
