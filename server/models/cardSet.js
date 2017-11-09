@@ -4,6 +4,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    order: {
+      type: DataTypes.INTEGER,
+    },
     uuid: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV1,

@@ -53,10 +53,12 @@ const SchemeData = [
 const cardSetData = [
   {
     name: 'jp1',
+    order: 1,
     phonicScheme: 'Jolly Phonics',
   },
   {
     name: 'jp2',
+    order: 2,
     phonicScheme: 'Jolly Phonics',
   },
   {
