@@ -10,7 +10,18 @@ router.get('/', (req, res, next) => {
         {
           model: db.cardSets,
           attributes: ['name'],
-          include: db.flashcards,
+          include: [
+            {
+              model: db.flashcards,
+              attributes: ['order'],
+              include: [
+                {
+                  model: db.graphemes,
+                  attributes: ['grapheme'],
+                },
+              ],
+            },
+          ],
         },
       ],
     })
