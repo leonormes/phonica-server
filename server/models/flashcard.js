@@ -1,18 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
-  const PhonicScheme = sequelize.define('phonic_scheme', {
+  const Flashcard = sequelize.define('flashcard', {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    order: {
+      type: DataTypes.INTEGER,
     },
     uuid: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV1,
       primaryKey: true,
     },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
   });
-  return PhonicScheme;
+  return Flashcard;
 };

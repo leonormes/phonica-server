@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const PhonicScheme = sequelize.define('phonic_scheme', {
+  const CardSet = sequelize.define('card_set', {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -9,10 +9,6 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV1,
       primaryKey: true,
     },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
   });
-  return PhonicScheme;
+  return CardSet;
 };
