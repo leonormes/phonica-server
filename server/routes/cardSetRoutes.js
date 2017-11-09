@@ -5,12 +5,21 @@ const db = require('../../db');
 router.get('/', (req, res, next) => {
   db.cardSets
     .findAll({
+      attributes: ['name'],
       include: [
         {
           model: db.flashcards,
+          attributes: ['order'],
+          include: [
+            {
+              model: db.graphemes,
+              attributes: ['grapheme'],
+            },
+          ],
         },
         {
           model: db.phonicSchemes,
+          attributes: ['name'],
         },
       ],
     })
