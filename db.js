@@ -24,10 +24,8 @@ db.phonicSchemes.hasMany(db.cardSets);
 db.cardSets.belongsTo(db.phonicSchemes);
 db.cardSets.hasMany(db.flashcards);
 db.flashcards.belongsTo(db.cardSets);
-db.flashcards.hasOne(db.graphemes);
-db.graphemes.belongsToMany(db.flashcards, {
-  through: 'flashcards_graphemes',
-});
+db.flashcards.belongsTo(db.graphemes);
+db.graphemes.hasMany(db.flashcards);
 db.graphemes.belongsTo(db.phonemes);
 db.phonemes.hasMany(db.graphemes);
 db.words.belongsToMany(db.graphemes, {

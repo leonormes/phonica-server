@@ -1,11 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Flashcard = sequelize.define('flashcard', {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     order: {
       type: DataTypes.INTEGER,
+      allowNull: false,
     },
     uuid: {
       type: DataTypes.UUID,
