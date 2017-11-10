@@ -5,6 +5,7 @@ const {
   GraphQLInt,
   GraphQLSchema,
   GraphQLList,
+  GraphQLID,
   GraphQLNonNull,
 } = require('graphql');
 
@@ -21,6 +22,12 @@ const GraphemeType = new GraphQLObjectType({
           return grapheme.grapheme;
         },
       },
+      phonemes: {
+        type: PhonemeType,
+        resolve(grapheme) {
+          return grapheme.getPhoneme();
+        },
+      },
     };
   },
 });
@@ -35,6 +42,18 @@ const PhonemeType = new GraphQLObjectType({
         type: GraphQLString,
         resolve(phoneme) {
           return phoneme.phoneme;
+        },
+      },
+      id: {
+        type: GraphQLID,
+        resolve(phoneme) {
+          return phoneme.uuid;
+        },
+      },
+      graphemes: {
+        type: new GraphQLList(GraphemeType),
+        resolve(phoneme) {
+          return phoneme.getGraphemes();
         },
       },
     };
@@ -59,6 +78,20 @@ const RootQuery = new GraphQLObjectType({
         },
         resolve(root, args) {
           return db.graphemes.findAll({where: args});
+        },
+      },
+      phonemes: {
+        type: new GraphQLList(PhonemeType),
+        args: {
+          id: {
+            type: GraphQLInt,
+          },
+          phoneme: {
+            type: GraphQLString,
+          },
+        },
+        resolve(root, args) {
+          return db.phonemes.findAll({where: args});
         },
       },
     };
