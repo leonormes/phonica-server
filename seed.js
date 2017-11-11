@@ -33,12 +33,14 @@ db.sequelize
     // Create Graphemes
     return Promise.map(GraphemeData, function(grapheme) {
       Grapheme.create(grapheme).then((newGrapheme) => {
-        return Phoneme.findAll({
-          where: {
-            id: grapheme.phoneme,
-          },
-        }).then((ph) => {
-          newGrapheme.setPhoneme(ph[0].dataValues.uuid);
+        return Promise.map(grapheme.phoneme, (phoneme) => {
+          Phoneme.findAll({
+            where: {
+              id: phoneme,
+            },
+          }).then((ph) => {
+            newGrapheme.setPhonemes(ph[0].dataValues.uuid);
+          });
         });
       });
     });

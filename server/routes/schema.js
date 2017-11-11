@@ -25,7 +25,7 @@ const GraphemeType = new GraphQLObjectType({
       phonemes: {
         type: PhonemeType,
         resolve(grapheme) {
-          return grapheme.getPhoneme();
+          return grapheme.getPhonemes();
         },
       },
     };

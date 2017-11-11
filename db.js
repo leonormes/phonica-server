@@ -26,8 +26,12 @@ db.cardSets.hasMany(db.flashcards);
 db.flashcards.belongsTo(db.cardSets);
 db.flashcards.belongsTo(db.graphemes);
 db.graphemes.hasMany(db.flashcards);
-db.graphemes.belongsTo(db.phonemes);
-db.phonemes.hasMany(db.graphemes);
+db.graphemes.belongsToMany(db.phonemes, {
+  through: 'grapheme_phoneme',
+});
+db.phonemes.belongsToMany(db.graphemes, {
+  through: 'grapheme_phoneme',
+});
 db.words.belongsToMany(db.graphemes, {
   through: 'word_graphemes',
 });
