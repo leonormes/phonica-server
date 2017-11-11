@@ -172,7 +172,7 @@ module.exports = GraphemeData = [
     id: 26,
     createdAt: new Date(),
     updatedAt: new Date(),
-    phoneme: null,
+    phoneme: 11,
   },
   {
     grapheme: 'y',

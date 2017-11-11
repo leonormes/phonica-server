@@ -12,7 +12,7 @@ const GraphemeData = require('./seedData/graphemeData');
 const PhonemeData = require('./seedData/phonemeData');
 const flashcardData = require('./seedData/flashcardData');
 const cardSetData = require('./seedData/cardSetData');
-const wordData = require('./seedData/wordData');
+const wordData = require('./seedData/vocaWords');
 const SchemeData = require('./seedData/schemeData');
 
 // an array of grapheme entries
