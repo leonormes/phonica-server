@@ -11,69 +11,12 @@ const PhonicScheme = require('./db').phonicSchemes;
 const GraphemeData = require('./seedData/graphemeData');
 const PhonemeData = require('./seedData/phonemeData');
 const flashcardData = require('./seedData/flashcardData');
+const cardSetData = require('./seedData/cardSetData');
+const wordData = require('./seedData/wordData');
+const SchemeData = require('./seedData/schemeData');
 
 // an array of grapheme entries
 // an array of Phoneme entries
-
-const WordData = [
-  {
-    word: 'crab',
-    graphemes: [
-      {grapheme: 'c'},
-      {grapheme: 'r'},
-      {grapheme: 'a'},
-      {grapheme: 'b'},
-    ],
-  },
-  {
-    word: 'tin',
-    graphemes: [{grapheme: 't'}, {grapheme: 'i'}, {grapheme: 'n'}],
-  },
-  {
-    word: 'sit',
-    graphemes: [{grapheme: 's'}, {grapheme: 'i'}, {grapheme: 't'}],
-  },
-];
-
-const SchemeData = [
-  {
-    name: 'Jolly Phonics',
-    description: 'A very Jolly way to learn Phonics',
-  },
-  {
-    name: 'Letter and Sounds',
-    description: 'The govs offical Phonics scheme',
-  },
-  {
-    name: 'Read, Write Inc',
-    description: 'An alternative scheme',
-  },
-];
-
-const cardSetData = [
-  {
-    name: 'jp1',
-    order: 1,
-    phonicScheme: 'Jolly Phonics',
-  },
-  {
-    name: 'jp2',
-    order: 2,
-    phonicScheme: 'Jolly Phonics',
-  },
-  {
-    name: 'jp3',
-    phonicScheme: 'Jolly Phonics',
-  },
-  {
-    name: 'jp4',
-    phonicScheme: 'Jolly Phonics',
-  },
-  {
-    name: 'jp5',
-    phonicScheme: 'Jolly Phonics',
-  },
-];
 
 // Sync and restart db before seeding
 db.sequelize
@@ -85,9 +28,6 @@ db.sequelize
     return Promise.map(PhonemeData, function(phoneme) {
       return Phoneme.create(phoneme);
     });
-  })
-  .then((createdPhoneme) => {
-    console.log(`${createdPhoneme.length} phonemes created`);
   })
   .then(() => {
     // Create Graphemes
@@ -103,12 +43,9 @@ db.sequelize
       });
     });
   })
-  .then((createdGraphemes) => {
-    console.log(`${createdGraphemes.length} graphemes created`);
-  })
   .then(() => {
     // create Words
-    return Promise.map(WordData, function(word) {
+    return Promise.map(wordData, function(word) {
       Word.create(word).then((newWord) => {
         return Promise.map(word.graphemes, (grapheme) => {
           Grapheme.findAll({
@@ -127,9 +64,6 @@ db.sequelize
       return PhonicScheme.create(scheme);
     });
   })
-  .then((createdScheme) => {
-    console.log(`${createdScheme.length} schemes created`);
-  })
   .then(() => {
     // create a cardSet
     return Promise.map(cardSetData, function(set) {
@@ -143,9 +77,6 @@ db.sequelize
         });
       });
     });
-  })
-  .then((createdSets) => {
-    console.log(`${createdSets.length} Sets created`);
   })
   .then(() => {
     return Promise.map(flashcardData, function(card) {
@@ -170,6 +101,6 @@ db.sequelize
       });
     });
   })
-  .then((createdSets) => {
-    console.log(`${createdSets.length} Sets created`);
+  .catch((err) => {
+    console.error('Error!', err, err.stack);
   });

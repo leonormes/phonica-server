@@ -8,7 +8,7 @@ The phoneme &#230; as in apple has a grapheme a.
 
 In this case I want to create the data for the DB with associations. I can look up a phoneme (sound) and list its 1 or more graphemes. We don't actually use the 	&#601;&#650; characters but I want them for the teachers, as some phonemes are tricky to identify written with normal letters. Like 'th'. 'Thick'(&#952;) and 'The'(&#240;)
 
-These are the graphemes
+These are the graphemes you find in the 'Jolly Phonics' scheme;
 
 ![graphemes](http://jollylearning.co.uk/wordpress/images/LetterSounds.gif)
 ## Install
@@ -34,18 +34,11 @@ Make sure you have sequelize CLI installed.
 
 Sequelize deals with the DB. 
 
-Actually you don't need to run the migrations as I have a `db.sync()` method when the server starts that will make
-the tables from the models when you start the server.
-
-`npm run start:dev`
-
-Will create the tables
-
-then run
+Run
 
  `node seed.js`
 
-This should run a script to add stuff to the database. At the moment it just adds Graphemes. 
+This should run a script to build the tables and then add all the data to the database.
 
 ## Test API
 
@@ -54,9 +47,15 @@ In postman
 `get http://localhost:8000/graphemes`
 
 and you should see an object of all the graphemes in the db returned.
+
+## Test the graphQL server here
+
+[heroku instance of graphiql](https://serene-sands-14266.herokuapp.com/graphql)
+
 ## Technology used
 
 - Node with Express
 - Postgres
 - Sequelize
 - Heroku
+- GraphQL
