@@ -11,6 +11,10 @@ router.get('/', (req, res, next) => {
           model: db.phonemes,
           attributes: ['phoneme', 'description', 'uniCode'],
         },
+        {
+          model: db.words,
+          attributes: ['word'],
+        },
       ],
     })
     .then(res.send.bind(res))

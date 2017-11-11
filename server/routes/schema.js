@@ -28,6 +28,28 @@ const GraphemeType = new GraphQLObjectType({
           return grapheme.getPhoneme();
         },
       },
+      words: {
+        type: new GraphQLList(WordType),
+        resolve(grapheme) {
+          return grapheme.getWords();
+        },
+      },
+    };
+  },
+});
+
+// WordType
+const WordType = new GraphQLObjectType({
+  name: 'Word',
+  description: 'This represents a word',
+  fields: () => {
+    return {
+      word: {
+        type: GraphQLString,
+        resolve(word) {
+          return word.word;
+        },
+      },
     };
   },
 });
