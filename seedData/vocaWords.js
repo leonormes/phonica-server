@@ -1,5 +1,4 @@
 const voca = require('voca');
-const Rx = require('rxjs');
 
 const words = [
   'sit',
@@ -7,6 +6,10 @@ const words = [
   'as',
   'at',
   'it',
+  'dad',
+  'well',
+  'man',
+  'run',
   'its',
   'is',
   'pip',

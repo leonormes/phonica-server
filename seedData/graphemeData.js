@@ -4,7 +4,7 @@ module.exports = GraphemeData = [
     id: 1,
     createdAt: new Date(),
     updatedAt: new Date(),
-    phoneme: [1],
+    phoneme: [1, 14],
   },
   {
     grapheme: 'a',
@@ -56,8 +56,29 @@ module.exports = GraphemeData = [
     phoneme: [5],
   },
   {
+    grapheme: 'dd',
+    id: 52,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    phoneme: [5],
+  },
+  {
+    grapheme: 'ed',
+    id: 53,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    phoneme: [5],
+  },
+  {
     grapheme: 'g',
     id: 9,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    phoneme: [7],
+  },
+  {
+    grapheme: 'gg',
+    id: 56,
     createdAt: new Date(),
     updatedAt: new Date(),
     phoneme: [7],
@@ -119,6 +140,13 @@ module.exports = GraphemeData = [
     phoneme: [3],
   },
   {
+    grapheme: 'bb',
+    id: 51,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    phoneme: [3],
+  },
+  {
     grapheme: 'f',
     id: 18,
     createdAt: new Date(),
@@ -128,6 +156,13 @@ module.exports = GraphemeData = [
   {
     grapheme: 'ff',
     id: 19,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    phoneme: [10],
+  },
+  {
+    grapheme: 'ph',
+    id: 55,
     createdAt: new Date(),
     updatedAt: new Date(),
     phoneme: [10],
@@ -151,7 +186,7 @@ module.exports = GraphemeData = [
     id: 22,
     createdAt: new Date(),
     updatedAt: new Date(),
-    phoneme: [1],
+    phoneme: [1, 14],
   },
   {
     grapheme: 'j',
@@ -172,7 +207,7 @@ module.exports = GraphemeData = [
     id: 26,
     createdAt: new Date(),
     updatedAt: new Date(),
-    phoneme: [6, 1],
+    phoneme: [50],
   },
   {
     grapheme: 'y',
@@ -313,5 +348,19 @@ module.exports = GraphemeData = [
     createdAt: new Date(),
     updatedAt: new Date(),
     phoneme: [41],
+  },
+  {
+    grapheme: 'oy',
+    id: 47,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    phoneme: [35],
+  },
+  {
+    grapheme: 'ow',
+    id: 48,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    phoneme: [38],
   },
 ];

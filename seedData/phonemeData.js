@@ -1,6 +1,6 @@
 module.exports = PhonemeData = [
   {
-    phoneme: 's',
+    phoneme: '/s/',
     id: 1,
     description: 'see, set, sit',
     uniCode: 's',
@@ -9,7 +9,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'p',
+    phoneme: '/p/',
     id: 2,
     description: 'pen, copy, happen',
     uniCode: 'p',
@@ -18,7 +18,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'b',
+    phoneme: '/b/',
     id: 3,
     description: 'back, baby, job',
     uniCode: 'b',
@@ -27,7 +27,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 't',
+    phoneme: '/t/',
     id: 4,
     description: 'tea, tight, button',
     uniCode: 't',
@@ -36,7 +36,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'd',
+    phoneme: '/d/',
     id: 5,
     description: 'day, ladder, odd',
     uniCode: 'd',
@@ -45,7 +45,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'k',
+    phoneme: '/k/',
     id: 6,
     description: 'key, clock, school',
     uniCode: 'k',
@@ -54,7 +54,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'g',
+    phoneme: '/g/',
     id: 7,
     description: 'get, giggle, ghost',
     uniCode: '&#609;',
@@ -63,7 +63,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ch',
+    phoneme: '/ch/',
     id: 8,
     description: 'church, match, nature',
     uniCode: 't &#643;',
@@ -72,7 +72,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'j',
+    phoneme: '/j/',
     id: 9,
     description: 'judge, age, soldier',
     uniCode: 'd &#658;',
@@ -81,7 +81,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'f',
+    phoneme: '/f/',
     id: 10,
     description: 'fat, coffee, rough, photo',
     uniCode: 'f',
@@ -90,7 +90,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'v',
+    phoneme: '/v/',
     id: 11,
     description: 'view, heavy, move',
     uniCode: 'v',
@@ -99,7 +99,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'th',
+    phoneme: '/th/',
     id: 12,
     description: 'thing, author, path',
     uniCode: '&#952;',
@@ -108,7 +108,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'th',
+    phoneme: '/th/',
     id: 13,
     description: 'this, other, smooth',
     uniCode: '&#240;',
@@ -117,7 +117,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'z',
+    phoneme: '/z/',
     id: 14,
     description: 'zero, music, roses, buzz',
     uniCode: 'z',
@@ -126,7 +126,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'sh',
+    phoneme: '/sh/',
     id: 15,
     description: 'ship, sure, national',
     uniCode: '&#643;',
@@ -135,7 +135,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'zh',
+    phoneme: '/zh/',
     id: 16,
     description: 'pleasure, vision',
     uniCode: '&#658;',
@@ -144,7 +144,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'h',
+    phoneme: '/h/',
     id: 17,
     description: 'hot, whole, ahead',
     uniCode: 'h',
@@ -153,7 +153,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'm',
+    phoneme: '/m/',
     id: 18,
     description: 'more, hammer, sum',
     uniCode: 'm',
@@ -162,7 +162,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'n',
+    phoneme: '/n/',
     id: 19,
     description: 'nice, know, funny, sun',
     uniCode: 'n',
@@ -171,7 +171,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ng',
+    phoneme: '/ng/',
     id: 20,
     description: 'ring, anger, thanks, sung',
     uniCode: '&#331;',
@@ -180,7 +180,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'l',
+    phoneme: '/l/',
     id: 21,
     description: 'light, valley, feel',
     uniCode: 'l',
@@ -189,7 +189,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'r',
+    phoneme: '/r/',
     id: 22,
     description: 'right, wrong, sorry, arrange',
     uniCode: 'r',
@@ -198,7 +198,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'j',
+    phoneme: '/j/',
     id: 23,
     description: 'yet, use, beauty, few',
     uniCode: 'j',
@@ -207,7 +207,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'w',
+    phoneme: '/w/',
     id: 24,
     description: 'wet, one, when, queen',
     uniCode: 'w',
@@ -216,7 +216,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 't',
+    phoneme: '/t/',
     id: 25,
     description: 'department, football',
     uniCode: '&#660;',
@@ -225,7 +225,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'i',
+    phoneme: '/i/',
     id: 26,
     description: 'kit, bid, hymn, minute',
     uniCode: '&#618;',
@@ -234,7 +234,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'e',
+    phoneme: '/e/',
     id: 27,
     description: 'dress, bed, head, many',
     uniCode: 'e',
@@ -243,7 +243,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'a',
+    phoneme: '/a/',
     id: 28,
     description: 'trap, bad',
     uniCode: '&#230;',
@@ -252,7 +252,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'o',
+    phoneme: '/o/',
     id: 29,
     description: 'lot, odd, wash',
     uniCode: '&#594;',
@@ -261,7 +261,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'u',
+    phoneme: '/u/',
     id: 30,
     description: 'strut, mud, love, blood',
     uniCode: '&#652;',
@@ -270,7 +270,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'oo',
+    phoneme: '/oo/',
     id: 31,
     description: 'foot, good, put',
     uniCode: '&#650;',
@@ -279,7 +279,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ee',
+    phoneme: '/ee/',
     id: 32,
     description: 'fleece, sea, machine',
     uniCode: 'i &#720;',
@@ -288,7 +288,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ai',
+    phoneme: '/ai/',
     id: 33,
     description: 'face, day, break',
     uniCode: 'e &#618;',
@@ -297,7 +297,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ie',
+    phoneme: '/ie/',
     id: 34,
     description: 'price, high, try',
     uniCode: 'a &#618;',
@@ -306,7 +306,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'oi',
+    phoneme: '/oi/',
     id: 35,
     description: 'choice, boy',
     uniCode: '&#596; &#618;',
@@ -315,7 +315,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'oo',
+    phoneme: '/oo/',
     id: 36,
     description: 'goose, two, blue, group',
     uniCode: 'u &#720;',
@@ -324,7 +324,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'oa',
+    phoneme: '/oa/',
     id: 37,
     description: 'goat, show, no',
     uniCode: '&#601; &#650;',
@@ -333,7 +333,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ou',
+    phoneme: '/ou/',
     id: 38,
     description: 'mouth, now',
     uniCode: 'a &#650;',
@@ -342,7 +342,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ea',
+    phoneme: '/ea/',
     id: 39,
     description: 'near, here, weary',
     uniCode: '&618; &#601;',
@@ -351,7 +351,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ai',
+    phoneme: '/ai/',
     id: 40,
     description: 'square, fair, various',
     uniCode: 'e &#601;',
@@ -360,7 +360,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ar',
+    phoneme: '/ar/',
     id: 41,
     description: 'start, father',
     uniCode: '&#593; &#720;',
@@ -369,7 +369,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'or',
+    phoneme: '/or/',
     id: 42,
     description: 'thought, law, north, war',
     uniCode: '&#596; &#720;',
@@ -378,7 +378,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ur',
+    phoneme: '/ur/',
     id: 43,
     description: 'poor, jury, cure',
     uniCode: '&#650; &#601;',
@@ -387,7 +387,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'er',
+    phoneme: '/er/',
     id: 44,
     description: 'nurse, stir, learn, refer',
     uniCode: '&#604; &#720;',
@@ -396,7 +396,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'a',
+    phoneme: '/a/',
     id: 45,
     description: 'about, common, standard',
     uniCode: '&#601;',
@@ -405,7 +405,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'i',
+    phoneme: '/i/',
     id: 46,
     description: 'happy, radiate. glorious',
     uniCode: 'i',
@@ -414,7 +414,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'ou',
+    phoneme: '/ou/',
     id: 47,
     description: 'you, influence, situation',
     uniCode: 'u',
@@ -423,7 +423,7 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'en',
+    phoneme: '/en/',
     id: 48,
     description: 'suddenly, cotton',
     uniCode: 'n &#809;',
@@ -432,11 +432,21 @@ module.exports = PhonemeData = [
     updatedAt: new Date(),
   },
   {
-    phoneme: 'le',
+    phoneme: '/le/',
     id: 49,
     description: 'middle, metal',
     uniCode: 'l &#809;',
     vowel: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: '/ks/',
+    id: 50,
+    description:
+      'box, fox. This phoneme is actually two phonemes, the k and s sounds.',
+    uniCode: 'ks',
+    vowel: false,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
