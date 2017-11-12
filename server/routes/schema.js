@@ -50,6 +50,12 @@ const WordType = new GraphQLObjectType({
           return word.word;
         },
       },
+      graphemes: {
+        type: new GraphQLList(GraphemeType),
+        resolve(word) {
+          return word.getGraphemes();
+        },
+      },
     };
   },
 });
@@ -88,11 +94,11 @@ const RootQuery = new GraphQLObjectType({
   description: 'This is the root query',
   fields: () => {
     return {
-      grapheme: {
+      graphemes: {
         type: new GraphQLList(GraphemeType),
         args: {
           id: {
-            type: GraphQLInt,
+            type: GraphQLID,
           },
           grapheme: {
             type: GraphQLString,
@@ -106,7 +112,7 @@ const RootQuery = new GraphQLObjectType({
         type: new GraphQLList(PhonemeType),
         args: {
           id: {
-            type: GraphQLInt,
+            type: GraphQLID,
           },
           phoneme: {
             type: GraphQLString,
@@ -114,6 +120,20 @@ const RootQuery = new GraphQLObjectType({
         },
         resolve(root, args) {
           return db.phonemes.findAll({where: args});
+        },
+      },
+      words: {
+        type: new GraphQLList(WordType),
+        args: {
+          id: {
+            type: GraphQLID,
+          },
+          word: {
+            type: GraphQLString,
+          },
+        },
+        resolve(root, args) {
+          return db.words.findAll({where: args});
         },
       },
     };
