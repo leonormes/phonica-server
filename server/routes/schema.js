@@ -23,7 +23,7 @@ const GraphemeType = new GraphQLObjectType({
         },
       },
       phonemes: {
-        type: PhonemeType,
+        type: new GraphQLList(PhonemeType),
         resolve(grapheme) {
           return grapheme.getPhonemes();
         },
