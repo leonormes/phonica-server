@@ -12,10 +12,26 @@ db.sequelize = sequelize;
 db.phonemes = require('./server/models/phoneme')(sequelize, Sequelize);
 db.graphemes = require('./server/models/grapheme')(sequelize, Sequelize);
 db.words = require('./server/models/word')(sequelize, Sequelize);
+db.cardSets = require('./server/models/cardSet')(sequelize, Sequelize);
+db.flashcards = require('./server/models/flashcard')(sequelize, Sequelize);
+db.phonicSchemes = require('./server/models/phonicScheme')(
+  sequelize,
+  Sequelize
+);
 
 // Relationships
-db.graphemes.belongsTo(db.phonemes);
-db.phonemes.hasMany(db.graphemes);
+db.phonicSchemes.hasMany(db.cardSets);
+db.cardSets.belongsTo(db.phonicSchemes);
+db.cardSets.hasMany(db.flashcards);
+db.flashcards.belongsTo(db.cardSets);
+db.flashcards.belongsTo(db.graphemes);
+db.graphemes.hasMany(db.flashcards);
+db.graphemes.belongsToMany(db.phonemes, {
+  through: 'grapheme_phoneme',
+});
+db.phonemes.belongsToMany(db.graphemes, {
+  through: 'grapheme_phoneme',
+});
 db.words.belongsToMany(db.graphemes, {
   through: 'word_graphemes',
 });

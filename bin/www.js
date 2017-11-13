@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 server.listen(port, function() {
   // db.sequelize
-  //   .sync({force: true})
+  //   .sync({force: false})
   //   .then((message) => {
   //     console.log('...and db is synced!');
   //   })
