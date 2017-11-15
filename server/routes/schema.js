@@ -22,6 +22,12 @@ const PhonicSchemeType = new GraphQLObjectType({
           return phonicScheme.name;
         },
       },
+      id: {
+        type: GraphQLID,
+        resolve(phonicScheme) {
+          return phonicScheme.uuid;
+        },
+      },
       description: {
         type: GraphQLString,
         resolve(phonicScheme) {
