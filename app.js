@@ -17,7 +17,6 @@ const app = express();
 console.log('Env as string', process.env.NODE_ENV);
 // Log requests to the console.
 app.use(logger('dev'));
-app.use(cors());
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(
   '/graphql',
