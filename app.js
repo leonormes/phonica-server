@@ -2,7 +2,7 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-import cors from 'cors';
+const cors = require('cors');
 const schema = require('./server/routes/schema');
 require('dotenv').config();
 
