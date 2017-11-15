@@ -2,6 +2,7 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+import cors from 'cors';
 const schema = require('./server/routes/schema');
 require('dotenv').config();
 
@@ -17,7 +18,7 @@ const app = express();
 console.log('Env as string', process.env.NODE_ENV);
 // Log requests to the console.
 app.use(logger('dev'));
-
+app.use(cors());
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(
   '/graphql',
