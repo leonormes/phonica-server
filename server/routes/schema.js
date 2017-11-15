@@ -10,6 +10,28 @@ const {
 } = require('graphql');
 
 // GraphQL Type  schemes
+// PhonicScheme type
+const PhonicSchemeType = new GraphQLObjectType({
+  name: 'PhonicScheme',
+  description: 'This represents a phonics scheme',
+  fields: () => {
+    return {
+      name: {
+        type: GraphQLString,
+        resolve(phonicScheme) {
+          return phonicScheme.name;
+        },
+      },
+      description: {
+        type: GraphQLString,
+        resolve(phonicScheme) {
+          return phonicScheme.description;
+        },
+      },
+    };
+  },
+});
+
 // GraphemeType
 const GraphemeType = new GraphQLObjectType({
   name: 'Grapheme',
@@ -134,6 +156,20 @@ const RootQuery = new GraphQLObjectType({
         },
         resolve(root, args) {
           return db.words.findAll({where: args});
+        },
+      },
+      phonicSchemes: {
+        type: new GraphQLList(PhonicSchemeType),
+        args: {
+          id: {
+            type: GraphQLID,
+          },
+          name: {
+            type: GraphQLString,
+          },
+        },
+        resolve(root, args) {
+          return db.phonicSchemes.findAll({where: args});
         },
       },
     };
