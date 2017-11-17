@@ -4,7 +4,7 @@ module.exports = SchemeData = [
     description: 'A very Jolly way to learn Phonics',
   },
   {
-    name: 'Letter and Sounds',
+    name: 'Letters & Sounds',
     description: 'The govs offical Phonics scheme',
   },
   {
