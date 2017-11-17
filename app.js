@@ -12,19 +12,10 @@ const CardSetRouter = require('./server/routes/cardSetRoutes');
 const GraphemeRouter = require('./server/routes/graphemeRoutes');
 const WordRouter = require('./server/routes/wordRoutes');
 const PhonicSchemeRouter = require('./server/routes/phonicSchemeRoutes');
-// FIXES CORS ERROR
-const whitelist = ['http://localhost:3000'];
-const corsOptions = {
-  origin: function(origin, callback) {
-    const originIsWhitelisted = whitelist.indexOf(origin) !== -1;
-    callback(null, originIsWhitelisted);
-  },
-  credentials: true,
-};
 // Set up the express app
 const app = express();
-app.use(cors(corsOptions));
-console.log('Env as string', process.env.NODE_ENV);
+
+app.use(cors('*'));
 // Log requests to the console.
 app.use(logger('dev'));
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
