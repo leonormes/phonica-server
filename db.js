@@ -22,16 +22,20 @@ db.phonicSchemes = require('./server/models/phonicScheme')(
 // Relationships
 db.phonicSchemes.hasMany(db.cardSets);
 db.cardSets.belongsTo(db.phonicSchemes);
+
 db.cardSets.hasMany(db.flashcards);
 db.flashcards.belongsTo(db.cardSets);
+
 db.flashcards.belongsTo(db.graphemes);
 db.graphemes.hasMany(db.flashcards);
+
 db.graphemes.belongsToMany(db.phonemes, {
   through: 'grapheme_phoneme',
 });
 db.phonemes.belongsToMany(db.graphemes, {
   through: 'grapheme_phoneme',
 });
+
 db.words.belongsToMany(db.graphemes, {
   through: 'word_graphemes',
 });
