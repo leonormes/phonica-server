@@ -35,7 +35,7 @@ const PhonicSchemeType = new GraphQLObjectType({
         },
       },
       cardSets: {
-        type: new GraphQLList(CardSetType),
+        type: GraphQLString,
         resolve(phonicScheme) {
           return phonicScheme.getCardSets();
         },
@@ -161,7 +161,7 @@ const FlashcardType = new GraphQLObjectType({
       cardSet: {
         type: CardSetType,
         resolve(flashcard) {
-          return flashcard.getCardSet();
+          return flashcard.getCardset();
         },
       },
     };

@@ -27,42 +27,42 @@ module.exports = cardSetData = [
   {
     name: 'las1',
     order: 1,
-    phonicScheme: 'Letters and Sounds',
+    phonicScheme: 'Letters & Sounds',
   },
   {
     name: 'las2',
     order: 2,
-    phonicScheme: 'Letters and Sounds',
+    phonicScheme: 'Letters & Sounds',
   },
   {
     name: 'las3',
     order: 3,
-    phonicScheme: 'Letters and Sounds',
+    phonicScheme: 'Letters & Sounds',
   },
   {
     name: 'las4',
     order: 4,
-    phonicScheme: 'Letters and Sounds',
+    phonicScheme: 'Letters & Sounds',
   },
   {
     name: 'las5',
     order: 5,
-    phonicScheme: 'Letters and Sounds',
+    phonicScheme: 'Letters & Sounds',
   },
   {
     name: 'las6',
     order: 6,
-    phonicScheme: 'Letters and Sounds',
+    phonicScheme: 'Letters & Sounds',
   },
   {
     name: 'las7',
     order: 7,
-    phonicScheme: 'Letters and Sounds',
+    phonicScheme: 'Letters & Sounds',
   },
   {
     name: 'las8',
     order: 8,
-    phonicScheme: 'Letters and Sounds',
+    phonicScheme: 'Letters & Sounds',
   },
   {
     name: 'rwi1',

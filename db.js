@@ -42,5 +42,4 @@ db.words.belongsToMany(db.graphemes, {
 db.graphemes.belongsToMany(db.words, {
   through: 'word_graphemes',
 });
-console.log(db.cardSets);
 module.exports = db;

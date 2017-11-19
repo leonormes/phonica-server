@@ -3,6 +3,7 @@ const router = require('express').Router();
 const db = require('../../db');
 
 router.get('/', (req, res, next) => {
+  console.log(db.cardSets);
   db.cardSets
     .findAll({
       attributes: ['name'],
