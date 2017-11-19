@@ -3,6 +3,7 @@ const expressGraphQL = require('express-graphql');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const schema = require('./server/routes/schema');
+const cors = require('cors');
 require('dotenv').config();
 
 // Routes
@@ -11,10 +12,10 @@ const CardSetRouter = require('./server/routes/cardSetRoutes');
 const GraphemeRouter = require('./server/routes/graphemeRoutes');
 const WordRouter = require('./server/routes/wordRoutes');
 const PhonicSchemeRouter = require('./server/routes/phonicSchemeRoutes');
-
 // Set up the express app
 const app = express();
-console.log('Env as string', process.env.NODE_ENV);
+
+app.use(cors('*'));
 // Log requests to the console.
 app.use(logger('dev'));
 // Parse incoming requests data (https://github.com/expressjs/body-parser)

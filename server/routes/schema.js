@@ -34,6 +34,12 @@ const PhonicSchemeType = new GraphQLObjectType({
           return phonicScheme.description;
         },
       },
+      cardSets: {
+        type: new GraphQLList(CardSetType),
+        resolve(phonicScheme) {
+          return phonicScheme.getCardSets();
+        },
+      },
     };
   },
 });
@@ -88,6 +94,79 @@ const WordType = new GraphQLObjectType({
   },
 });
 
+// CardSetType
+const CardSetType = new GraphQLObjectType({
+  name: 'CardSet',
+  description: 'This represents a set of cards',
+  fields: () => {
+    return {
+      name: {
+        type: GraphQLString,
+        resolve(cardSet) {
+          return cardSet.name;
+        },
+      },
+      order: {
+        type: GraphQLInt,
+        resolve(cardSet) {
+          return cardSet.order;
+        },
+      },
+      flashcards: {
+        type: new GraphQLList(FlashcardType),
+        resolve(cardSet) {
+          return cardSet.getFlashcards();
+        },
+      },
+      id: {
+        type: GraphQLID,
+        resolve(cardSet) {
+          return cardSet.uuid;
+        },
+      },
+      phonicScheme: {
+        type: PhonicSchemeType,
+        resolve(cardSet) {
+          return cardSet.getPhonicsScheme();
+        },
+      },
+    };
+  },
+});
+
+// Flashcard Type
+const FlashcardType = new GraphQLObjectType({
+  name: 'Flashcard',
+  description: 'This represents a flashcard',
+  fields: () => {
+    return {
+      order: {
+        type: GraphQLInt,
+        resolve(flashcard) {
+          return flashcard.order;
+        },
+      },
+      id: {
+        type: GraphQLID,
+        resolve(flashcard) {
+          return flashcard.uuid;
+        },
+      },
+      grapheme: {
+        type: GraphemeType,
+        resolve(flashcard) {
+          return flashcard.getGrapheme();
+        },
+      },
+      cardSet: {
+        type: CardSetType,
+        resolve(flashcard) {
+          return flashcard.getCardSet();
+        },
+      },
+    };
+  },
+});
 // PhonemeType
 const PhonemeType = new GraphQLObjectType({
   name: 'Phoneme',
@@ -125,7 +204,7 @@ const RootQuery = new GraphQLObjectType({
       graphemes: {
         type: new GraphQLList(GraphemeType),
         args: {
-          id: {
+          uuid: {
             type: GraphQLID,
           },
           grapheme: {
@@ -139,7 +218,7 @@ const RootQuery = new GraphQLObjectType({
       phonemes: {
         type: new GraphQLList(PhonemeType),
         args: {
-          id: {
+          uuid: {
             type: GraphQLID,
           },
           phoneme: {
@@ -153,7 +232,7 @@ const RootQuery = new GraphQLObjectType({
       words: {
         type: new GraphQLList(WordType),
         args: {
-          id: {
+          uuid: {
             type: GraphQLID,
           },
           word: {
@@ -167,7 +246,7 @@ const RootQuery = new GraphQLObjectType({
       phonicSchemes: {
         type: new GraphQLList(PhonicSchemeType),
         args: {
-          id: {
+          uuid: {
             type: GraphQLID,
           },
           name: {
@@ -176,6 +255,37 @@ const RootQuery = new GraphQLObjectType({
         },
         resolve(root, args) {
           return db.phonicSchemes.findAll({where: args});
+        },
+      },
+      cardSets: {
+        type: new GraphQLList(CardSetType),
+        args: {
+          uuid: {
+            type: GraphQLID,
+          },
+          phonicSchemeUuid: {
+            type: GraphQLID,
+          },
+          name: {
+            type: GraphQLString,
+          },
+        },
+        resolve(root, args) {
+          return db.cardSets.findAll({where: args});
+        },
+      },
+      flashcards: {
+        type: new GraphQLList(FlashcardType),
+        args: {
+          uuid: {
+            type: GraphQLID,
+          },
+          order: {
+            type: GraphQLInt,
+          },
+        },
+        resolve(root, args) {
+          return db.flashcards.findAll({where: args});
         },
       },
     };

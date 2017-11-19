@@ -1,6 +1,5 @@
 const http = require('http');
 const app = require('../app');
-const db = require('../db');
 const port = parseInt(process.env.PORT, 10) || 8000;
 
 app.set('port', port);
