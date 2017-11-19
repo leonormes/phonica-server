@@ -127,7 +127,7 @@ const CardSetType = new GraphQLObjectType({
       phonicScheme: {
         type: PhonicSchemeType,
         resolve(cardSet) {
-          return cardSet.getPhonicsScheme();
+          return cardSet.getPhonicSchemes();
         },
       },
     };

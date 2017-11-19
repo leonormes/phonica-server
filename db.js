@@ -20,11 +20,11 @@ db.phonicSchemes = require('./server/models/phonicScheme')(
 );
 
 // Relationships
-db.phonicSchemes.hasMany(db.cardSets);
 db.cardSets.belongsTo(db.phonicSchemes);
+db.phonicSchemes.hasMany(db.cardSets);
 
-db.cardSets.hasMany(db.flashcards);
 db.flashcards.belongsTo(db.cardSets);
+db.cardSets.hasMany(db.flashcards);
 
 db.flashcards.belongsTo(db.graphemes);
 db.graphemes.hasMany(db.flashcards);
@@ -42,5 +42,5 @@ db.words.belongsToMany(db.graphemes, {
 db.graphemes.belongsToMany(db.words, {
   through: 'word_graphemes',
 });
-
+console.log(db.cardSets);
 module.exports = db;

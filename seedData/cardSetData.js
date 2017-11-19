@@ -94,4 +94,14 @@ module.exports = cardSetData = [
     order: 6,
     phonicScheme: 'Read, Write Inc',
   },
+  {
+    name: 'jp6',
+    order: 6,
+    phonicScheme: 'Jolly Phonics',
+  },
+  {
+    name: 'jp7',
+    order: 7,
+    phonicScheme: 'Jolly Phonics',
+  },
 ];
