@@ -106,6 +106,12 @@ const CardSetType = new GraphQLObjectType({
           return cardSet.name;
         },
       },
+      order: {
+        type: GraphQLInt,
+        resolve(cardSet) {
+          return cardSet.order;
+        },
+      },
       flashcards: {
         type: new GraphQLList(FlashcardType),
         resolve(cardSet) {
