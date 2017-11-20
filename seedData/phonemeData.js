@@ -380,7 +380,7 @@ module.exports = PhonemeData = [
   {
     phoneme: '/ur/',
     id: 43,
-    description: 'poor, jury, cure',
+    description: 'pure, jury, cure',
     uniCode: '&#650; &#601;',
     vowel: true,
     createdAt: new Date(),
@@ -446,6 +446,15 @@ module.exports = PhonemeData = [
     description:
       'box, fox. This phoneme is actually two phonemes, the k and s sounds.',
     uniCode: 'ks',
+    vowel: false,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    phoneme: '/kw/',
+    id: 51,
+    description: 'queen, quick. 2 phonemes together',
+    uniCode: 'kw',
     vowel: false,
     createdAt: new Date(),
     updatedAt: new Date(),

@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV1,
       primaryKey: true,
     },
+    phase: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   });
   return Flashcard;
 };

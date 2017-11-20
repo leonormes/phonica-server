@@ -9,9 +9,6 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV1,
       primaryKey: true,
     },
-    id: {
-      type: DataTypes.INTEGER,
-    },
   });
   return Grapheme;
 };
