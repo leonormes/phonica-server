@@ -95,6 +95,11 @@ module.exports = cardSetData = [
     phonicScheme: 'Read, Write Inc',
   },
   {
+    name: 'rwi7',
+    order: 7,
+    phonicScheme: 'Read, Write Inc',
+  },
+  {
     name: 'jp6',
     order: 6,
     phonicScheme: 'Jolly Phonics',
