@@ -7,6 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     order: {
       type: DataTypes.INTEGER,
     },
+    phase: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
     uuid: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV1,
