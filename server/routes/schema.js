@@ -6,7 +6,6 @@ const {
   GraphQLSchema,
   GraphQLList,
   GraphQLID,
-  GraphQLNonNull,
 } = require('graphql');
 
 // GraphQL Type  schemes
@@ -270,6 +269,9 @@ const RootQuery = new GraphQLObjectType({
             type: GraphQLString,
           },
         },
+        orderBy: {
+          order: 'ASC',
+        },
         resolve(root, args) {
           return db.cardSets.findAll({where: args});
         },
@@ -283,6 +285,9 @@ const RootQuery = new GraphQLObjectType({
           order: {
             type: GraphQLInt,
           },
+        },
+        orderBy: {
+          order: 'asc',
         },
         resolve(root, args) {
           return db.flashcards.findAll({where: args});
