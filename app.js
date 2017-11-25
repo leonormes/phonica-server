@@ -22,7 +22,7 @@ app.use(logger('dev'));
 app.use(
   '/graphql',
   expressGraphQL({
-    schema: schema,
+    schema,
     graphiql: true,
   })
 );

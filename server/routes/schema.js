@@ -13,33 +13,31 @@ const {
 const PhonicSchemeType = new GraphQLObjectType({
   name: 'PhonicScheme',
   description: 'This represents a phonics scheme',
-  fields: () => {
-    return {
-      name: {
-        type: GraphQLString,
-        resolve(phonicScheme) {
-          return phonicScheme.name;
-        },
+  fields: {
+    name: {
+      type: GraphQLString,
+      resolve(phonicScheme) {
+        return phonicScheme.name;
       },
-      id: {
-        type: GraphQLID,
-        resolve(phonicScheme) {
-          return phonicScheme.uuid;
-        },
+    },
+    id: {
+      type: GraphQLID,
+      resolve(phonicScheme) {
+        return phonicScheme.uuid;
       },
-      description: {
-        type: GraphQLString,
-        resolve(phonicScheme) {
-          return phonicScheme.description;
-        },
+    },
+    description: {
+      type: GraphQLString,
+      resolve(phonicScheme) {
+        return phonicScheme.description;
       },
-      cardSets: {
-        type: GraphQLString,
-        resolve(phonicScheme) {
-          return phonicScheme.getCardSets();
-        },
+    },
+    cardSets: {
+      type: GraphQLString,
+      resolve(phonicScheme) {
+        return phonicScheme.getCardSets();
       },
-    };
+    },
   },
 });
 
@@ -51,6 +49,7 @@ const GraphemeType = new GraphQLObjectType({
     return {
       grapheme: {
         type: GraphQLString,
+        description: 'the letter',
         resolve(grapheme) {
           return grapheme.grapheme;
         },
@@ -97,39 +96,37 @@ const WordType = new GraphQLObjectType({
 const CardSetType = new GraphQLObjectType({
   name: 'CardSet',
   description: 'This represents a set of cards',
-  fields: () => {
-    return {
-      name: {
-        type: GraphQLString,
-        resolve(cardSet) {
-          return cardSet.name;
-        },
+  fields: {
+    name: {
+      type: GraphQLString,
+      resolve(cardSet) {
+        return cardSet.name;
       },
-      order: {
-        type: GraphQLInt,
-        resolve(cardSet) {
-          return cardSet.order;
-        },
+    },
+    order: {
+      type: GraphQLInt,
+      resolve(cardSet) {
+        return cardSet.order;
       },
-      flashcards: {
-        type: new GraphQLList(FlashcardType),
-        resolve(cardSet) {
-          return cardSet.getFlashcards();
-        },
+    },
+    flashcards: {
+      type: new GraphQLList(FlashcardType),
+      resolve(cardSet) {
+        return cardSet.getFlashcards();
       },
-      id: {
-        type: GraphQLID,
-        resolve(cardSet) {
-          return cardSet.uuid;
-        },
+    },
+    id: {
+      type: GraphQLID,
+      resolve(cardSet) {
+        return cardSet.uuid;
       },
-      phonicScheme: {
-        type: PhonicSchemeType,
-        resolve(cardSet) {
-          return cardSet.getPhonicSchemes();
-        },
+    },
+    phonicScheme: {
+      type: PhonicSchemeType,
+      resolve(cardSet) {
+        return cardSet.getPhonicScheme();
       },
-    };
+    },
   },
 });
 
@@ -270,12 +267,6 @@ const RootQuery = new GraphQLObjectType({
           phonicSchemeUuid: {
             type: GraphQLID,
           },
-          name: {
-            type: GraphQLString,
-          },
-        },
-        orderBy: {
-          order: 'asc',
         },
         resolve(root, args) {
           return db.cardSets.findAll({
@@ -293,9 +284,6 @@ const RootQuery = new GraphQLObjectType({
           order: {
             type: GraphQLInt,
           },
-        },
-        orderBy: {
-          order: 'asc',
         },
         resolve(root, args) {
           return db.flashcards.findAll({
