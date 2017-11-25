@@ -210,8 +210,13 @@ const RootQuery = new GraphQLObjectType({
             type: GraphQLString,
           },
         },
+        orderBy: {
+          order: 'asc',
+        },
         resolve(root, args) {
-          return db.graphemes.findAll({where: args});
+          return db.graphemes.findAll({
+            where: args,
+          });
         },
       },
       phonemes: {
@@ -270,10 +275,13 @@ const RootQuery = new GraphQLObjectType({
           },
         },
         orderBy: {
-          order: 'ASC',
+          order: 'asc',
         },
         resolve(root, args) {
-          return db.cardSets.findAll({where: args});
+          return db.cardSets.findAll({
+            where: args,
+            order: [['order', 'asc']],
+          });
         },
       },
       flashcards: {
@@ -290,7 +298,10 @@ const RootQuery = new GraphQLObjectType({
           order: 'asc',
         },
         resolve(root, args) {
-          return db.flashcards.findAll({where: args});
+          return db.flashcards.findAll({
+            where: args,
+            order: [[db.flashcards, 'order']],
+          });
         },
       },
     };
