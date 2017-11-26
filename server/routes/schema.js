@@ -293,7 +293,6 @@ const RootQuery = new GraphQLObjectType({
         resolve(root, args) {
           return db.flashcards.findAll({
             where: args,
-            order: [[db.flashcards, 'order']],
           });
         },
       },
