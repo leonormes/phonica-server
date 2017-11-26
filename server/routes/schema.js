@@ -161,7 +161,7 @@ const FlashcardType = new GraphQLObjectType({
       cardSet: {
         type: CardSetType,
         resolve(flashcard) {
-          return flashcard.getCardset();
+          return flashcard.getCard_set();
         },
       },
     };
