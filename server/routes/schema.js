@@ -17,21 +17,13 @@ const PhonicSchemeType = new GraphQLObjectType({
     return {
       name: {
         type: GraphQLString,
-        resolve(phonicScheme) {
-          return phonicScheme.name;
-        },
+        description: 'The name of the scheme',
       },
-      id: {
+      uuid: {
         type: GraphQLID,
-        resolve(phonicScheme) {
-          return phonicScheme.uuid;
-        },
       },
       description: {
         type: GraphQLString,
-        resolve(phonicScheme) {
-          return phonicScheme.description;
-        },
       },
       cardSets: {
         type: new GraphQLList(CardSetType),
@@ -52,9 +44,6 @@ const GraphemeType = new GraphQLObjectType({
       grapheme: {
         type: GraphQLString,
         description: 'the letter',
-        resolve(grapheme) {
-          return grapheme.grapheme;
-        },
       },
       phonemes: {
         type: new GraphQLList(PhonemeType),
@@ -80,9 +69,6 @@ const WordType = new GraphQLObjectType({
     return {
       word: {
         type: GraphQLString,
-        resolve(word) {
-          return word.word;
-        },
       },
       graphemes: {
         type: new GraphQLList(GraphemeType),
@@ -102,15 +88,9 @@ const CardSetType = new GraphQLObjectType({
     return {
       name: {
         type: GraphQLString,
-        resolve(cardSet) {
-          return cardSet.name;
-        },
       },
       order: {
         type: GraphQLInt,
-        resolve(cardSet) {
-          return cardSet.order;
-        },
       },
       flashcards: {
         type: new GraphQLList(FlashcardType),
@@ -118,11 +98,8 @@ const CardSetType = new GraphQLObjectType({
           return cardSet.getFlashcards();
         },
       },
-      id: {
+      uuid: {
         type: GraphQLID,
-        resolve(cardSet) {
-          return cardSet.uuid;
-        },
       },
       phonicScheme: {
         type: PhonicSchemeType,
@@ -142,15 +119,9 @@ const FlashcardType = new GraphQLObjectType({
     return {
       order: {
         type: GraphQLInt,
-        resolve(flashcard) {
-          return flashcard.order;
-        },
       },
-      id: {
+      uuid: {
         type: GraphQLID,
-        resolve(flashcard) {
-          return flashcard.uuid;
-        },
       },
       grapheme: {
         type: GraphemeType,
@@ -176,15 +147,9 @@ const PhonemeType = new GraphQLObjectType({
     return {
       phoneme: {
         type: GraphQLString,
-        resolve(phoneme) {
-          return phoneme.phoneme;
-        },
       },
-      id: {
+      uuid: {
         type: GraphQLID,
-        resolve(phoneme) {
-          return phoneme.uuid;
-        },
       },
       graphemes: {
         type: new GraphQLList(GraphemeType),
@@ -211,9 +176,6 @@ const RootQuery = new GraphQLObjectType({
           grapheme: {
             type: GraphQLString,
           },
-        },
-        orderBy: {
-          order: 'asc',
         },
         resolve(root, args) {
           return db.graphemes.findAll({
